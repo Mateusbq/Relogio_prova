@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Relógio</title>
+    <style>
+      body{
+    background-color: rgb(55, 233, 93);
+}
+
+section#pPrincipal{
+    background-color: rgb(255, 255, 255);
+    width: 800px;
+    height: 500px;
+    margin: auto;
+    border-radius: 10px;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.6);
+    padding: 30px;
+}
+
+h1{
+    font-family: sans-serif;
+    text-align: center;
+
+}
+
+div#relogio{
+    font-size: 90px;
+    text-align: center;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin-top: 70px;
+    margin-bottom: 10px;
+}
+
+div#dia{
+    font-size: 30px;
+    text-align: center;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin-bottom: 130px;
+}
+
+div#msg{
+    font-size: 30px;
+    font-family: sans-serif;
+    text-align: center;
+}
+
+footer{
+    text-align: center;
+    font-size: 20px;
+}
+
+    </style>
+</head>
+<body>
+    <section id="pPrincipal">
+      <h1>HORA E DATA</h1>
+      <div id="relogio">Texto...</div>
+      <div id="dia">Texto...</div>
+      <div id="msg"><p>Boa Prova!!</p></div>
+     
+    </section>
+    <footer>by Mateus Benício</footer>
+    <script>
+      var data = new Date()
+      var hora = data.getHours()
+      var minutos = data.getMinutes()
+      var segundos = data.getSeconds()
+      var hms = [hora, minutos, segundos].join(':')
+      relogio.innerHTML = hms
+      dia.innerHTML = data.toLocaleDateString('pt-BR')
+
+      if(hora >= 17){
+        msg.innerHTML = "Podem ir ao banheiro!"
+      } else if( hora >= 17 && minutos >= 30){
+        msg.innerHTML = "Podem ir para casa!"
+      }
+  </script>
+</body>
+</html>
+
